@@ -1,0 +1,23 @@
+services:
+
+    multifinger_declension_real_provider:
+        class: Multifinger\DeclensionBundle\Provider\MorpherProvider
+
+    multifinger_declension_entity_cache_provider:
+        class: Multifinger\DeclensionBundle\Provider\EntityCacheProviderDecorator
+        arguments: [ "@multifinger_declension_real_provider", "@doctrine.orm.default_entity_manager" ]
+
+    multifinger_declension_micro_cache_provider:
+        class: Multifinger\DeclensionBundle\Provider\MicrocacheProviderDecorator
+        arguments: [ "@multifinger_declension_entity_cache_provider" ]
+
+    multifinger_declension_service:
+        class: Multifinger\DeclensionBundle\Service\DeclensionService
+        arguments: [ "@multifinger_declension_micro_cache_provider" ]
+
+    multifinger_declension_extension:
+        class: Multifinger\DeclensionBundle\Twig\DeclensionExtension
+        arguments: [ "@multifinger_declension_service" ]
+        public: true
+        tags:
+            - { name: twig.extension }

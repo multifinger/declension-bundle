@@ -1,0 +1,8 @@
+Multifinger\DeclensionBundle\Entity\Cache:
+    type: entity
+    table: multi__declension__cache
+    id:
+        name:                   { type: string, length: 255, nullable: false, generator: { strategy: NONE } }
+    fields:
+        data:                   { type: text, nullable: false }
+    lifecycleCallbacks:         {  }
