@@ -9,7 +9,7 @@ namespace Multifinger\DeclensionBundle\Provider;
 class MorpherProvider extends AbstractHttpProvider
 {
 
-    const URL = 'http://morpher.ru/WebService.asmx/GetXml';
+    const URL = 'https://ws3.morpher.ru/russian/declension';
 
     public function decline($name)
     {
