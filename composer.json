@@ -1,0 +1,28 @@
+{
+    "name": "multifinger/declension-bundle",
+    "type": "symfony-bundle",
+    "description": "",
+    "keywords": [ "declension", "helpers", "symfony" ],
+    "homepage": "https://github.com/multifinger/declension-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Maksim Borisov",
+            "email": "maksim.i.borisov@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.0|3.*",
+        "symfony/serializer": "~2.0|3.*",
+        "symfony/console": "~2.0|3.*"
+    },
+    "require-dev": {
+        "symfony/expression-language": "~2.4|3.*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": { "Multifinger\\DeclensionBundle\\": "" }
+    }
+}
