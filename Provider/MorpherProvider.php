@@ -14,6 +14,7 @@ class MorpherProvider extends AbstractHttpProvider
     public function decline($name)
     {
         $url = self::URL.'?'.http_build_query(array('s' => $name));
+        $this->load($url);
         $tags = simplexml_load_string($this->load($url));
 
         return json_decode(json_encode($tags), true);
