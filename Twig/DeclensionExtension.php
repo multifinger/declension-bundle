@@ -5,10 +5,11 @@
 
 namespace Multifinger\DeclensionBundle\Twig;
 
-
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 use Multifinger\DeclensionBundle\Service\DeclensionService;
 
-class DeclensionExtension extends \Twig_Extension
+class DeclensionExtension extends AbstractExtension
 {
 
     /** @var DeclensionService  */
@@ -22,9 +23,9 @@ class DeclensionExtension extends \Twig_Extension
 
     public function getFilters()
     {
-        return array(
-            new \Twig_SimpleFilter('declension', array($this, 'declineFilter'))
-        );
+        return [
+            new TwigFilter('declension', [$this, 'declineFilter']),
+        ];
     }
 
     public function declineFilter($name, $case)
@@ -36,6 +37,5 @@ class DeclensionExtension extends \Twig_Extension
     {
         return 'multifinger_declension_extension';
     }
-
 
 }
