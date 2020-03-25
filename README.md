@@ -5,4 +5,6 @@ Provides declension Symfony service and twig extension with several providers.
 
 Currently configured to use http://morpher.ru/ provider with database cache and microcache wrappers.
 
-TODO: Add bundle configuration and installation instructions, yandex provider
+### Install
+1. `composer require multifinger/declension-bundle` (Add to kernel bundles IF NOT using flex)
+2. `bin/console doctrine:schema:update --force`
