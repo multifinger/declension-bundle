@@ -38,12 +38,14 @@ class EntityCacheProviderDecorator implements ProviderInterface
 
         $result = $this->inner->decline($name);
 
-        $cache = new Cache();
-        $cache->setName($name);
-        $cache->setData(serialize($result));
+        if (is_array($result) && sizeof($result)) {
+            $cache = new Cache();
+            $cache->setName($name);
+            $cache->setData(serialize($result));
 
-        $this->em->persist($cache);
-        $this->em->flush();
+            $this->em->persist($cache);
+            $this->em->flush();
+        }
 
         return $result;
     }

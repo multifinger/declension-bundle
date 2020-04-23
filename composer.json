@@ -13,6 +13,9 @@
     ],
     "require": {
         "php": ">=7.1.0",
+        "ext-simplexml": "*",
+        "ext-curl": "*",
+        "ext-json": "*",
         "doctrine/orm": "*",
         "symfony/console": "^4.1",
         "symfony/framework-bundle": "^4.1",
