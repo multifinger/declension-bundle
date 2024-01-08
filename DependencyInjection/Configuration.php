@@ -17,8 +17,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('multifinger_declension');
+        $treeBuilder = new TreeBuilder('multifinger_declension');
 
         return $treeBuilder;
     }
