@@ -2,66 +2,39 @@
 
 namespace Multifinger\DeclensionBundle\Entity;
 
-/**
- * Cache
- */
+use Doctrine\ORM\Mapping as ORM;
+
+#[ORM\Entity]
+#[ORM\Table(name: 'multi__declension__cache')]
 class Cache
 {
-    /**
-     * @var string
-     */
-    private $name;
+    #[ORM\Id]
+    #[ORM\Column(type: 'string', length: 255, nullable: false)]
+    private ?string $name = null;
 
-    /**
-     * @var string
-     */
-    private $data;
+    #[ORM\Column(type: 'text', nullable: false)]
+    private ?string $data = null;
 
-
-    /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Cache
-     */
-    public function setName($name)
+    public function setName(string $name): static
     {
         $this->name = $name;
 
         return $this;
     }
 
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->name;
     }
 
-    /**
-     * Set data
-     *
-     * @param string $data
-     *
-     * @return Cache
-     */
-    public function setData($data)
+    public function setData(?string $data): static
     {
         $this->data = $data;
 
         return $this;
     }
 
-    /**
-     * Get data
-     *
-     * @return string
-     */
-    public function getData()
+    public function getData(): ?string
     {
         return $this->data;
     }
