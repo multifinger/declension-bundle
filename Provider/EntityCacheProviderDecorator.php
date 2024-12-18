@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: makz
- * Date: 01.07.16
- * Time: 12:32
- */
 
 namespace Multifinger\DeclensionBundle\Provider;
 
@@ -30,7 +24,7 @@ class EntityCacheProviderDecorator implements ProviderInterface
     public function decline($name)
     {
         /** @var Cache $cache */
-        $cache = $this->em->getRepository('MultifingerDeclensionBundle:Cache')->findOneBy(array('name' => $name));
+        $cache = $this->em->getRepository(Cache::class)->findOneBy(array('name' => $name));
 
         if ($cache !== null) {
             return unserialize($cache->getData());
